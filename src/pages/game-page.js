@@ -2,6 +2,7 @@ import * as THREE from "../../libs/three";
 import scene from '../scene/scene'
 import Cuboid from "../block/cuboid";
 import CylinderBlock from "../block/cylinder";
+import ground from "../objects/ground";
 
 export default  class GamePage{
     constructor(callbacks){
@@ -10,8 +11,11 @@ export default  class GamePage{
 
     init(){
        this.scene = scene ;
+       this.ground = ground;
        this.scene.init();
+       this.ground.init();
        this.addInitBlock();
+       this.addGround();
        this.render();
     }
 
@@ -39,6 +43,10 @@ export default  class GamePage{
         const cylinderBlock = new CylinderBlock(23,0,0);
         this.scene.instance.add(cuboidBlock.instance);
         this.scene.instance.add(cylinderBlock.instance);
+    }
+
+    addGround(){
+        this.scene.instance.add(this.ground.instance);
     }
 
 }
