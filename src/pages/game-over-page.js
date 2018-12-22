@@ -37,7 +37,7 @@ export default  class GameOverPage{
 
         this.texture.needsUpdate = true ;
         this.hiden();
-        this.scene.add(this.obj);
+       // this.scene.add(this.obj);
     }
 
     show(){
