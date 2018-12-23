@@ -15,6 +15,7 @@ customAnimation.to = function (obj, duration, options) {
                 return function () {
                     //console.log("name", name, obj[name], options[name], duration, delay, obj)
                     TweenAnimation(obj[name], options[name], duration, options.ease || 'Linear', function (value, complete) {
+                        console.log(name + ":" +value);
                         obj[name] = value;
                         if (complete) {
                             options.onComplete && options.onComplete();
